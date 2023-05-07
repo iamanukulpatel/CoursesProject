@@ -1,0 +1,42 @@
+
+.card{
+    margin-bottom: 40px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    border: none;
+}
+
+.row{
+   text-align: center;
+}
+
+.card-img-top{
+    border-bottom: 2px solid beige;
+}
+.btn{
+    width: 60%;
+    margin: 5px;
+
+}
+.coursePrice{
+    margin-bottom: 40px;
+}
+
+
+.courseType{
+    display: inline;
+    margin: 13px;
+    font-size: large;
+}
+.courseNotFound{
+    color: red;
+    margin-top: 50px;
+}
+
+.img-wrapper {
+    display: inline-block; /* change the default display type to inline-block */
+    overflow: hidden;      /* hide the overflow */
+}
+.img-wrapper img:hover {
+    transition: all .4s ease;
+    transform: scale(1.1);
+}

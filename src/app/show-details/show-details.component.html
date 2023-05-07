@@ -1,0 +1,57 @@
+<div class="container">
+  <app-header></app-header>
+  <div class="row">
+    <div class="col">
+      <img
+        [src]="course.image"
+        class="card-img-top"
+        alt="..."
+        [height]="400"
+        [width]="250"
+      />
+      <div class="card-body">
+        <h3
+          style="font-family: cursive; font-size: xx-large"
+          class="card-title"
+        >
+          {{ course.name }}
+        </h3>
+
+        <div class="coursePrice">
+          <p
+            class="courseType"
+            [ngStyle]="{ color: course.type != 'Free' ? 'red' : 'green' }"
+          >
+            <b>{{ course.type }}</b>
+          </p>
+          <p class="courseType">
+            <b>Price: </b>{{ course.price | currency : "INR" }}
+          </p>
+          <p class="card-text">{{ course.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- these code is for next course and previous code button -->
+
+<div class="text-center bottom-div">
+  <button
+    (click)="isLastCourse()"
+    class="btn"
+    [routerLink]="['/course/', course.id + 1]"
+    [ngClass]="{ disabled: isLastCourse() }"
+  >
+    &raquo;
+  </button>
+  <span style="color: blue; font-size: small">{{ courseNumber }}</span>
+  <button
+    (click)="isFirstCourse()"
+    class="btn"
+    [routerLink]="['/course/', course.id - 1]"
+    [ngClass]="{ disabled: isFirstCourse() }"
+  >
+    &laquo;
+  </button>
+</div>
