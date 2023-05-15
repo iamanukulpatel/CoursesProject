@@ -13,7 +13,16 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'course/:id', component: ShowDetailsComponent },
-  { path: 'course/:id/:name', component: BuyCourseComponent },
+  // { path: 'course/:id/:name', component: BuyCourseComponent },
+  {
+    path: 'course/:id',
+    children: [
+      {
+        path: ':name',
+        component: BuyCourseComponent,
+      },
+    ],
+  },
   { path: '**', component: Error404Component },
 ];
 
